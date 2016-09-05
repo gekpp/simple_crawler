@@ -1,10 +1,10 @@
-package ru.vigilov.services;
+package ru.vigilov.simple_crawler.services;
 
 import com.google.common.collect.Sets;
 import lombok.Getter;
 import lombok.extern.java.Log;
-import ru.vigilov.Application;
-import ru.vigilov.models.Site;
+import ru.vigilov.simple_crawler.Application;
+import ru.vigilov.simple_crawler.helpers.Site;
 
 import java.net.URL;
 import java.util.Objects;

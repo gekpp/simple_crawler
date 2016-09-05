@@ -1,6 +1,6 @@
-package ru.vigilov.services;
+package ru.vigilov.simple_crawler.helpers;
 
-import ru.vigilov.models.Response;
+import ru.vigilov.simple_crawler.helpers.Response;
 
 /**
  * Ivan on 04.09.2016.

@@ -1,10 +1,10 @@
-package ru.vigilov;
+package ru.vigilov.simple_crawler;
 
 import lombok.Getter;
 import lombok.extern.java.Log;
-import ru.vigilov.models.Site;
-import ru.vigilov.services.SiteHandler;
-import ru.vigilov.services.SiteScannerService;
+import ru.vigilov.simple_crawler.helpers.Site;
+import ru.vigilov.simple_crawler.services.SiteHandler;
+import ru.vigilov.simple_crawler.services.SiteScannerService;
 
 import java.io.FileInputStream;
 import java.io.IOException;

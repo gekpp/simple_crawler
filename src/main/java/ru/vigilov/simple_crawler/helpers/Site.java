@@ -1,4 +1,4 @@
-package ru.vigilov.models;
+package ru.vigilov.simple_crawler.helpers;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

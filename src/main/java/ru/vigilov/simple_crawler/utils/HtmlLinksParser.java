@@ -1,9 +1,8 @@
-package ru.vigilov.utils;
+package ru.vigilov.simple_crawler.utils;
 
 import lombok.extern.java.Log;
 
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;

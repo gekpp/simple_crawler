@@ -1,4 +1,4 @@
-package ru.vigilov.utils;
+package ru.vigilov.simple_crawler.utils;
 
 import lombok.Getter;
 import lombok.extern.java.Log;

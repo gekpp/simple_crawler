@@ -1,9 +1,9 @@
-package ru.vigilov.services;
+package ru.vigilov.simple_crawler.services;
 
 import lombok.extern.java.Log;
 import org.apache.http.HttpStatus;
-import ru.vigilov.Application;
-import ru.vigilov.utils.HtmlLinksParser;
+import ru.vigilov.simple_crawler.Application;
+import ru.vigilov.simple_crawler.utils.HtmlLinksParser;
 
 import java.net.URL;
 import java.util.concurrent.Executors;

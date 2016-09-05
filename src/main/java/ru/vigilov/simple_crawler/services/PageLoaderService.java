@@ -1,9 +1,10 @@
-package ru.vigilov.services;
+package ru.vigilov.simple_crawler.services;
 
 import lombok.Getter;
 import lombok.extern.java.Log;
-import ru.vigilov.Application;
-import ru.vigilov.models.Response;
+import ru.vigilov.simple_crawler.Application;
+import ru.vigilov.simple_crawler.helpers.Response;
+import ru.vigilov.simple_crawler.helpers.ResponseCallback;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -36,6 +36,12 @@ public class SiteScannerService {
 
         loader = new PageLoaderService();
 
+//FIXME: Хочется, чтобы количество потоков не требовало дополнительного конфигурирования:
+/* Цитата: "Приложение работает в ограниченное количество потоков, но максимально эффективно на запускаемом железе, 
+            для этого можно допустить что ОТНОШЕНИЕ простоя потоков к реальной их работе 4/1.
+            Либо организовать асинхронную работу с сетевым стэком."
+    Я выделил слово ОТНОШНИЕ большими буквами, чтобы обозначить, что 4 и 1 - это не абсолютные значения, а отношение.
+*/
         maxThreads = Integer.parseInt(Application.getConfig().getProperty("threads_by_core", "4"));
     }
 
@@ -113,6 +119,7 @@ public class SiteScannerService {
     * Проверяет пул на перегрузку не активными потоками
     * */
     private static boolean isOverloadThreads(int waiting, int active, int maxThreads) {
+        //FIXME: Почему active может быть равно 0, если метод вызывается из работающего потока (я полагаю, что active не может быть 0, или я заблуждаюсь)?
         if (active == 0) {
             active = 1;
         }
@@ -130,7 +137,8 @@ public class SiteScannerService {
         if (active > maxThreads) {
             return true;
         }
-
+        
+//FIXME: MAGIC NUMBERS - что они значат?
         return waiting > 4 && active > 1 && (waiting / active) <= 4;
     }
 
@@ -158,6 +166,7 @@ public class SiteScannerService {
     * */
     private boolean checkFinish(SiteHandler handler) {
         return handler.getScanPageQueue().size() == 0 &&
+        //FIXME: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html#getActiveCount-- "Returns the approximate number of threads that are actively executing tasks." - не гарантированный способ
                 processingPool.getActiveCount() == 1 &&
                 loader.getExecutor().getActiveCount() == 0;
     }
